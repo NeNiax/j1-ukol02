@@ -8,8 +8,8 @@ public class HlavniProgram {
     private Turtle zofka = new Turtle();
 
     public void start() {
-// CAST 1 - NAKRESLI ROVNOSTRANNY TROJUHELNIK, CTVEREC, OBDELNIK, KOLECKO(MNOHOUHELNIK).
-
+//        CAST 1 - NAKRESLI ROVNOSTRANNY TROJUHELNIK, CTVEREC, OBDELNIK, KOLECKO(MNOHOUHELNIK).
+//
 //        zofka.setLocation(100.0, 100.0);
 //        nakresliRovnostrannyTrojuhelnik(60.0);
 //
@@ -26,7 +26,7 @@ public class HlavniProgram {
 //        nakresliKolecko(6.0, 10);
 
 
-// CAST 2 -NAKRESLI ZMRZLINU
+//      CAST 2 -NAKRESLI ZMRZLINU
         zofka.setLocation(100, 300);
         zofka.setPenColor(Color.ORANGE);
         zofka.turnRight(15);
@@ -43,13 +43,13 @@ public class HlavniProgram {
         zofka.setPenColor(Color.pink);
         nakresliKolecko(5.5);
 
-// CAST2 NAKRESLI SNEHULAKA
+//      CAST2 NAKRESLI SNEHULAKA
         zofka.setLocation(400.0, 200.0);
         zofka.setPenColor(Color.blue);
         // nastav velikosti bricha, hlavy, nohou, rukou
         nakresliSnehulaka(13, 8, 17, 5);
 
-//    CAST 2 NAKRESLI MASINKU
+//      CAST 2 NAKRESLI MASINKU
         zofka.setLocation(600, 300);
         zofka.turnRight(180);
 
@@ -81,11 +81,11 @@ public class HlavniProgram {
     }
 
     public void nakresliSnehulaka(double krokBricho, double krokHlava, double krokNohy, double krokRuky) {
-//odecte souradnice Y pro pravou ruku
+        //odecte souradnice Y pro pravou ruku
         var souradnicePravaRukaY = zofka.getY();
         var souradnicePravaRukaX = zofka.getX();
 
-// nakreslí 1. cast bricha a odecte souradnice X pro hlavu
+        // nakreslí 1. cast bricha a odecte souradnice X pro hlavu
         for (int i = 0; i < 9; i++) {
             zofka.move(krokBricho);
             zofka.turnLeft(10);
@@ -93,7 +93,7 @@ public class HlavniProgram {
         var souradniceHlavaX = zofka.getX();
         var souradniceHlavaY = zofka.getY();
 
-// nakreslí 2. cast bricha a odecte souradnice Y pro levou ruku
+        // nakreslí 2. cast bricha a odecte souradnice Y pro levou ruku
         for (int i = 0; i < 9; i++) {
             zofka.move(krokBricho);
             zofka.turnLeft(10);
@@ -101,7 +101,7 @@ public class HlavniProgram {
         var souradniceLevaRukaY = zofka.getY();
         var souradniceLevaRukaX = zofka.getX();
 
-// nakreslí 3. cast bricha a odecte souradnice X pro nohy
+        // nakreslí 3. cast bricha a odecte souradnice X pro nohy
         for (int i = 0; i < 9; i++) {
             zofka.move(krokBricho);
             zofka.turnLeft(10);
@@ -109,31 +109,31 @@ public class HlavniProgram {
         var souradniceNohyX = zofka.getX();
         var souradniceNohyY = zofka.getY();
 
-// nakreslí 4. cast bricha
+        // nakreslí 4. cast bricha
         for (int i = 0; i < 9; i++) {
             zofka.move(krokBricho);
             zofka.turnLeft(10);
         }
 
-// otoč zofku
+        // otoč zofku
         zofka.turnRight(77);
 
-// nakresli hlavu snehulaka
+        // nakresli hlavu snehulaka
         zofka.setLocation(souradniceHlavaX - (krokHlava / 2), souradniceHlavaY);
         nakresliKolecko(krokHlava);
         zofka.turnRight(180);
 
-// nakresli nohy sněhuláka
+        // nakresli nohy sněhuláka
         zofka.setLocation(souradniceNohyX - (krokNohy / 2), souradniceNohyY);
         nakresliKolecko(krokNohy);
         zofka.turnRight(90);
 
-//nakresli levou ruku
+        //nakresli levou ruku
         zofka.setLocation(souradniceLevaRukaX, souradniceLevaRukaY);
         nakresliKolecko(krokRuky);
         zofka.turnRight(180);
 
-// nakresli pravou ruku
+        // nakresli pravou ruku
         zofka.setLocation(souradnicePravaRukaX, souradnicePravaRukaY - (krokRuky / 2));
         nakresliKolecko(krokRuky);
         zofka.turnRight(10);
